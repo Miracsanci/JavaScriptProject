@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tasarım Kodlama</title>
+  <style>
+    body{
+        background: #304352;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #d7d2cc, #304352);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #d7d2cc, #304352); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+    #sayfa{
+
+        border: 3px solid black;
+        border-radius: 10px;
+        width: 500px;
+        margin-top: 5%;
+        margin-left: 30%;
+        background: grey;
+        padding:20px;
+        background: #40E0D0;  /* fallback for old browsers */
+        background: #40E0D0;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+    label{
+      display:block;
+      margin-top:5px;
+    }
+    input{
+      width: 200px;
+      height: 25px;
+      font-size:1.2em;
+    }
+    button{
+        border: 3px solid black;
+        border-radius: 10px;
+        background: #ee9ca7;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        border:none;
+        display:block;
+        margin-top:5px;
+        width: 204px;
+        height: 50px;
+        text-align: center;
+        font-size:1.2em;
+        }
+    table{
+        background: #3C3B3F;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #605C3C, #3C3B3F);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        margin:5px;
+        width: 100%;
+        color:#fff;
+    }
+    td,th{
+      border:5px solid white;
+      border-radius: 2px;
+      border-spacing: 0px;
+      margin: 0px;
+    }
+    .bilgi{
+        border: 5px solid black;
+        border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="sayfa">
+    <input type="text"  id="ad" placeholder="isim" required><br>
+    <input type="text"  id="Okul" placeholder="okul" required><br>
+    <input type="number"  id="yas" placeholder="yas" required><br>
+    <input type="email"  id="mail" placeholder="E posta " required>
+
+    <button id="ekle">Tabloya Ekle</button>
+  <table id="liste">
+      <tr>
+        <th>Ad</th>
+        <th>Okul</th>
+        <th>Yas</th>
+        <th>E posta </th>
+      </tr>
+  </table>
+  </div>
+    
+ 
+  <script>
+    var ad=document.querySelector("#ad");
+    var soyad=document.querySelector("#Okul");
+    var yas=document.querySelector("#yas");
+    var mail=document.querySelector("#mail");
+    var ekle=document.querySelector("#ekle");//tıklama olayı eklenecek
+    var liste=document.querySelector("#liste");
+ 
+    ekle.onclick=function(){
+      //butona tıklanınca çalıştırılacak
+      
+      //td elementlerini oluşturuyoruz
+      var tAd=document.createElement("td");
+      var tOkul=document.createElement("td");
+      var tYas=document.createElement("td");
+      var tmail=document.createElement("td");
+ 
+      
+      tAd.textContent=ad.value;//textboxtan değeri okuyup aktarıyoruz.
+      tOkul.textContent=Okul.value;//textboxtan değeri okuyup aktarıyoruz.
+      tYas.textContent=yas.value;//textboxtan değeri okuyup aktarıyoruz.
+      tmail.textContent=mail.value;
+      
+
+ 
+      //tr elementi oluşturuyoruz
+      let tr=document.createElement("tr");
+ 
+      //tdleri tr içine ekliyoruz
+      tr.appendChild(tAd);
+      tr.appendChild(tOkul);
+      tr.appendChild(tYas);
+      tr.appendChild(tmail);
+ 
+      //tr elementini liste (tablo) içine ekliyoruz
+      liste.appendChild(tr);
+ 
+      //nesnelerin için eklemeden sonra temizleyelim
+      ad.value="";
+      Okul.value="";
+      yas.value="";
+      mail.value="";
+ 
+    }
+ 
+  </script>
+    <ul>
+        <li><a href="index.html">Anasayfa</a></li>
+        <li><a href="ders1.html">Ders 1</a></li>
+        <li><a href="ders2.html">Ders 2</a></li>
+        <li><a href="ders3.html">Ders 3</a></li>
+        <li><a href="ders4.html">Ders 4</a></li>
+        <li><a href="ders5.html">Ders 5</a></li>
+        <li><a href="ders6.html">Ders 6</a></li>
+    </ul>
+</body>
+</html>
